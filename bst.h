@@ -520,7 +520,7 @@ void BinarySearchTree<Key, Value>::remove(const Key& key)
         nodeToRemove->getParent()->setRight(childNode);
     }
 
-    // Delete node to remove and update size
+    // Delete node to remove
     delete nodeToRemove;
     nodeToRemove = nullptr;
 }
