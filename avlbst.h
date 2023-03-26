@@ -356,7 +356,10 @@ void AVLTree<Key, Value>:: remove(const Key& key)
     }
 
     if (x != nullptr){ 
-      nodeSwap(n, x);
+      if (n->getLeft() != nullptr || n->getRight() != nullptr){
+        // if n is a leave node, no need to swap with it's predecessor
+        nodeSwap(n, x);
+      }
     }
 
     AVLNode<Key, Value>* p = n->getParent();
